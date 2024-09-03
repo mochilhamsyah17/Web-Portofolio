@@ -43,7 +43,7 @@ export default function Hero() {
             <span>Get in touch</span>
           </button>
         </a>
-        <a download="./myCv.pdf" target="_blank" href="./myCv.pdf">
+        <a href="/myCV.pdf" download="CV_MochIlhamsyahMaulana.pdf">
           <button className="hover:bg-white hover:text-black border-2 border-white bg-black text-white px-4 py-2 rounded-full">
             <span>Download CV</span>
           </button>
