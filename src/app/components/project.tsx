@@ -67,7 +67,7 @@ export default function Project() {
           Projects
         </span>
       </div>
-      <section className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center gap-8 px-32 lg:px-24 py-4">
+      <section className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center gap-8 px-24 py-4">
         {/* Card */}
 
         {dataProject.map((data, index) => (
