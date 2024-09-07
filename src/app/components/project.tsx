@@ -77,11 +77,14 @@ export default function Project() {
             href={data.link}
             target="_blank"
           >
-            <div className="h-full flex justify-center">
+            <div className="w-full h-40 rounded-t-lg relative">
               <Image
-                alt={data.alt}
-                src={data.src}
-                className="w-full h-40 rounded-t-lg"
+                src={data.src} // URL gambar
+                alt="Background image" // Alt text untuk SEO dan aksesibilitas
+                layout="fill" // Mengisi penuh container div
+                objectFit="cover" // Menyebabkan gambar menutupi seluruh area
+                objectPosition="center" // Menyelaraskan gambar di tengah
+                className="rounded-t-lg" // Menambahkan border-radius
               />
             </div>
             <div className="px-3 items-center h-16 md:h-20 flex flex-row">
