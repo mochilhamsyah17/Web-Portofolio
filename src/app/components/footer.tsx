@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="items-center flex flex-row gap-x-2">
         <Image src={ImageEmail} alt="image-email" className="w-6" />
         <span className="text-xs md:text-sm text-[#C5C5C5] font-semibold">
-          mochilhamsyah18@gmail.com
+          mochilhamsyah17@gmail.com
         </span>
       </div>
       <div className="flex w-full justify-center text-[#C5C5C5] text-[10px] items-end h-full">
