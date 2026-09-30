@@ -56,41 +56,41 @@ export default function Experiences() {
     >
       <SectionTag index="03" label="Path" />
       <Reveal>
-      <h2 className="flex w-full justify-center bg-gradient-to-r from-[#5BADFF] to-[#1373D1] bg-clip-text text-center text-2xl font-extrabold uppercase text-transparent md:text-4xl">
-        Experiences
-      </h2>
+        <h2 className="flex w-full justify-center bg-gradient-to-r from-[#5BADFF] to-[#1373D1] bg-clip-text text-center text-2xl font-extrabold uppercase text-transparent md:text-4xl">
+          Experiences
+        </h2>
       </Reveal>
 
       <ol className="relative flex w-full flex-col gap-8 border-l-2 border-white/10 pl-6 md:pl-8">
-        {dataExperience.map((data, index) => (
+        {dataExperience.reverse().map((data, index) => (
           <li key={index} className="relative">
             <span
               aria-hidden="true"
               className="absolute -left-[33px] top-1 h-3.5 w-3.5 rounded-full border-2 border-[#5BADFF] bg-[#0a0a0a] md:-left-[41px]"
             />
             <Reveal delay={Math.min(index, 4) * 0.06}>
-            <article className="flex w-full flex-col gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4 transition-colors hover:border-white/20 md:p-5">
-              <div className="flex w-full flex-row items-start gap-3">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white/5 p-1">
-                  <Image
-                    src={data.icon}
-                    alt={data.alt}
-                    className="h-full w-full object-contain"
-                  />
+              <article className="flex w-full flex-col gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4 transition-colors hover:border-white/20 md:p-5">
+                <div className="flex w-full flex-row items-start gap-3">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white/5 p-1">
+                    <Image
+                      src={data.icon}
+                      alt={data.alt}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <h3 className="text-sm font-bold leading-snug text-neutral-100 md:text-base">
+                      {data.title}
+                    </h3>
+                    <span className="inline-flex w-fit rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[11px] font-medium text-neutral-300 md:text-xs">
+                      {data.duration}
+                    </span>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-1">
-                  <h3 className="text-sm font-bold leading-snug text-neutral-100 md:text-base">
-                    {data.title}
-                  </h3>
-                  <span className="inline-flex w-fit rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[11px] font-medium text-neutral-300 md:text-xs">
-                    {data.duration}
-                  </span>
-                </div>
-              </div>
-              <p className="text-xs leading-relaxed text-neutral-400 md:text-sm">
-                {data.desc}
-              </p>
-            </article>
+                <p className="text-xs leading-relaxed text-neutral-400 md:text-sm">
+                  {data.desc}
+                </p>
+              </article>
             </Reveal>
           </li>
         ))}
