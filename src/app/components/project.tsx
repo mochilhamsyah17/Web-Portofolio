@@ -7,100 +7,133 @@ import ImageRida from "../../../public/Rida.webp";
 import ImageBoncal from "../../../public/Boncal.webp";
 import ImagePMBot from "../../../public/PMBot.webp";
 import ImageKG from "../../../public/kg.webp";
-
+import Reveal from "@/app/components/reveal";
+import SectionTag from "@/app/components/section-tag";
 export default function Project() {
   const dataProject = [
     {
       src: ImageBMI,
-      alt: "image-bmi",
-      tittle: "BMI Calculator",
-      desc: "BMI (Body Mass Index) Calculator adalah sebuah aplikasi web yang memungkinkan pengguna untuk menghitung indeks massa tubuh mereka berdasarkan tinggi dan berat badan. Dengan memasukkan nilai tinggi dan berat badan, aplikasi ini akan menghitung dan menampilkan BMI pengguna, serta memberikan interpretasi mengenai kategori berat badan seperti underweight, normal weight, overweight, atau obese. Aplikasi ini biasanya sederhana dan mudah digunakan, serta dapat membantu pengguna untuk memantau status kesehatan mereka terkait berat badan.",
+      alt: "Screenshot aplikasi BMI Calculator",
+      title: "BMI Calculator",
+      desc: "Aplikasi web untuk menghitung Body Mass Index berdasarkan tinggi dan berat badan, lengkap dengan interpretasi kategori underweight hingga obese.",
+      tech: ["HTML", "CSS", "JavaScript"],
       link: "https://ilhamsyah-tpa-02.netlify.app/",
     },
     {
       src: ImageToDoList,
-      alt: "image-todolist",
-      tittle: "To Do List",
-      desc: "To-Do List adalah aplikasi web yang dirancang untuk membantu pengguna mengelola tugas dan aktivitas sehari-hari. Pengguna dapat membuat daftar tugas, menambahkan item baru, menandai tugas yang telah selesai, serta menghapus atau mengedit tugas yang ada. Aplikasi ini bertujuan untuk meningkatkan produktivitas dengan menyediakan cara yang sederhana dan efisien untuk mengatur dan melacak pekerjaan yang perlu diselesaikan. Dengan tampilan yang user-friendly, To-Do List membantu pengguna tetap fokus dan terorganisir dalam menjalani kegiatan harian mereka.",
+      alt: "Screenshot aplikasi To Do List",
+      title: "To Do List",
+      desc: "Aplikasi pengelola tugas harian: tambah, edit, tandai selesai, dan hapus tugas dengan tampilan user-friendly.",
+      tech: ["React", "CSS"],
       link: "https://tpa-05-ilhamsyah.netlify.app/",
     },
     {
       src: ImageSkillMovie,
-      alt: "image-skillmovie",
-      tittle: "Movies Filters",
-      desc: "Pada aplikasi ini berisikan film-film yang pernah diproduksi dan memiliki fitur filter untuk memudahkan mencari film",
+      alt: "Screenshot aplikasi Movies Filters",
+      title: "Movies Filters",
+      desc: "Katalog film dengan fitur filter untuk memudahkan pencarian film yang pernah diproduksi.",
+      tech: ["React", "API"],
       link: "https://ilhamsyah-tpa-03.netlify.app/",
     },
     {
       src: ImageRida,
-      alt: "image-rida",
-      tittle: "Rida Landing Page",
-      desc: "Website Rida merupakan Company profile dari PT. Rihlah Duta Amanah. Pada website ini saya membuat landing page",
+      alt: "Screenshot landing page Rida",
+      title: "Rida Landing Page",
+      desc: "Company profile PT. Rihlah Duta Amanah — saya membangun landing page-nya.",
+      tech: ["HTML", "Tailwind"],
       link: "https://rida-project.netlify.app/",
     },
     {
       src: ImageBoncal,
-      alt: "image-boncal",
-      tittle: "Tourism Chatbot Boncal",
-      desc: "Boncal merupakan chatbot dengan tujuan untuk mengenalkan Kota Bogor yang dibuat ketika lomba yang diadakan oleh Dinas Pariwisata dan Budaya Kota Bogor yang bekerja sama dengan SMOJO AI.",
+      alt: "Screenshot chatbot Boncal",
+      title: "Tourism Chatbot Boncal",
+      desc: "Chatbot pengenalan Kota Bogor, dibuat saat lomba Disparbud Kota Bogor bersama SMOJO AI.",
+      tech: ["Chatbot", "SMOJO AI"],
       link: "https://app.smojo.org/teamtam/boncal",
     },
     {
       src: ImagePMBot,
-      alt: "image-pmbot",
-      tittle: "Marketing Chatbot PMBot",
-      desc: "PMBot merupakan chatbot dari Unit Marketing Institut Bisnis dan Informatika Kesatuan yang berfungsi memberikan layanan informasi 24/7 kepada calon Mahasiswa Institut Bisnis dan Informatika Kesatuan.",
+      alt: "Screenshot chatbot PMBot",
+      title: "Marketing Chatbot PMBot",
+      desc: "Chatbot Unit Marketing IBI Kesatuan untuk layanan informasi 24/7 bagi calon mahasiswa.",
+      tech: ["Chatbot", "SMOJO AI"],
       link: "https://app.smojo.org/marketingibik/PMBot",
     },
     {
       src: ImageKG,
-      alt: "image-kampus-gratis",
-      tittle: "Kampus Gratis",
-      desc: "PMBot merupakan chatbot dari Unit Marketing Institut Bisnis dan Informatika Kesatuan yang berfungsi memberikan layanan informasi 24/7 kepada calon Mahasiswa Institut Bisnis dan Informatika Kesatuan.",
+      alt: "Screenshot website Kampus Gratis",
+      title: "Kampus Gratis",
+      desc: "Kontribusi pada platform Kampus Gratis — ikut membangun fitur front-end nyata.",
+      tech: ["Next.js", "TypeScript"],
       link: "https://kampusgratis.id/",
     },
   ];
   return (
-    <section id="projects" className="py-16 space-y-8 flex-col items-center">
-      <div className="flex">
-        <span className="w-full text-center text-transparent bg-clip-text bg-gradient-to-r from-[#FF8660] to-[#D5491D] text-2xl md:text-4xl font-extrabold uppercase">
-          Projects
-        </span>
+    <section id="projects" className="flex-col items-center space-y-8 py-16">
+      <div className="px-6 md:px-12 lg:px-16 xl:px-24">
+        <SectionTag index="02" label="Work" />
       </div>
-      <section className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center gap-8 px-24 py-4">
-        {/* Card */}
-
+      <Reveal>
+      <div className="flex scroll-mt-24">
+        <h2 className="w-full bg-gradient-to-r from-[#FF8660] to-[#D5491D] bg-clip-text text-center text-2xl font-extrabold uppercase text-transparent md:text-4xl">
+          Projects
+        </h2>
+      </div>
+      </Reveal>
+      <div className="grid w-full grid-cols-1 justify-center gap-6 px-6 py-4 sm:grid-cols-2 md:px-12 lg:grid-cols-3 lg:px-16 xl:px-24">
         {dataProject.map((data, index) => (
+          <Reveal key={index} delay={(index % 3) * 0.1}>
           <a
-            key={index}
-            className="  rounded-lg w-full h-fit cursor-pointer bg-[#2A2A2A] hover:shadow-sm hover:shadow-slate-400"
+            className="group h-fit w-full overflow-hidden rounded-lg bg-[#2A2A2A] transition-all hover:-translate-y-1 hover:shadow-md hover:shadow-slate-400/40"
             href={data.link}
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Kunjungi ${data.title}`}
           >
-            <div className="w-full h-40 rounded-t-lg relative">
+            <div className="relative h-44 w-full overflow-hidden">
               <Image
-                src={data.src} // URL gambar
-                alt="Background image" // Alt text untuk SEO dan aksesibilitas
-                layout="fill" // Mengisi penuh container div
-                objectFit="cover" // Menyebabkan gambar menutupi seluruh area
-                objectPosition="center" // Menyelaraskan gambar di tengah
-                className="rounded-t-lg" // Menambahkan border-radius
+                src={data.src}
+                alt={data.alt}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="rounded-t-lg object-cover object-center transition-transform duration-300 group-hover:scale-105"
               />
-            </div>
-            <div className="px-3 items-center h-16 md:h-20 flex flex-row">
-              <div className="flex flex-col font-bold uppercase w-full">
-                <span className="text-[10px] text-[#C5C5C5]">
-                  Click here to visit
-                </span>
-                <span className="text-sm md:text-base ">{data.tittle}</span>
+              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/85 via-black/20 to-transparent p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <p className="line-clamp-3 text-left text-xs leading-relaxed text-neutral-200">
+                  {data.desc}
+                </p>
               </div>
-              <span className="flex justify-end">
-                <FiArrowUpRight />
-              </span>
+            </div>
+            <div className="flex flex-col gap-2 px-4 py-3">
+              <div className="flex flex-wrap gap-1.5">
+                {data.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] font-medium text-neutral-300"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <div className="flex h-auto flex-row items-center">
+                <div className="flex w-full flex-col font-bold uppercase">
+                  <span className="text-[10px] font-medium normal-case text-[#C5C5C5]">
+                    Click here to visit
+                  </span>
+                  <span className="text-sm md:text-base">{data.title}</span>
+                </div>
+                <span className="flex justify-end transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                  <FiArrowUpRight aria-hidden="true" />
+                </span>
+              </div>
+              <p className="line-clamp-2 text-xs normal-case text-neutral-400 group-hover:hidden">
+                {data.desc}
+              </p>
             </div>
           </a>
+          </Reveal>
         ))}
-      </section>
+      </div>
     </section>
   );
 }

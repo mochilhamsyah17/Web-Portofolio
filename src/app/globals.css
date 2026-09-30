@@ -3,31 +3,136 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 235, 235, 235;
+  --background-rgb: 10, 10, 10;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(var(--background-rgb));
+}
+
+/* Brand selection */
+::selection {
+  background: #ff8660;
+  color: #0a0a0a;
+}
+
+/* Slim dark scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 8px;
+  border: 2px solid #0a0a0a;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/* Bento card mouse spotlight (position via --x / --y from JS) */
+.card-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(
+    220px circle at var(--x, 50%) var(--y, 50%),
+    rgba(255, 134, 96, 0.14),
+    transparent 65%
+  );
+  pointer-events: none;
+}
+.card-spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Rotating conic ring for featured bento cards */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.featured-ring {
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    rgba(255, 134, 96, 0.55),
+    rgba(128, 0, 255, 0.55),
+    rgba(91, 173, 255, 0.45),
+    rgba(255, 134, 96, 0.55)
+  );
+  animation: ring-spin 7s linear infinite;
+}
+@keyframes ring-spin {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-ring {
+    animation: none;
+  }
+  .contour-drift {
+    animation: none;
+  }
+  .caret-blink {
+    animation: none;
+  }
+}
+
+/* ---- Engineering blueprint atmosphere ---- */
+
+/* Faint plus-sign grid across the page */
+.bg-plus-grid {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath d='M13.5 12h3v1.5h1.5v3H16.5V18h-3v-1.5H12v-3h1.5z' fill='%231a1a1a'/%3E%3C/svg%3E");
+  background-size: 30px 30px;
+}
+
+/* Film grain overlay */
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.05;
+}
+
+/* Ultra-slow contour drift (subliminal, 60s cycle) */
+.contour-drift {
+  stroke-dasharray: 6 14;
+  animation: contour-crawl 60s linear infinite;
+}
+@keyframes contour-crawl {
+  to {
+    stroke-dashoffset: -400;
+  }
+}
+
+/* Blinking terminal caret */
+.caret-blink {
+  animation: caret-blink 1.1s steps(1) infinite;
+}
+@keyframes caret-blink {
+  0%,
+  55% {
+    opacity: 1;
+  }
+  56%,
+  100% {
+    opacity: 0;
   }
 }
